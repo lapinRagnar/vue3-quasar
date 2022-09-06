@@ -4,6 +4,7 @@
       type="text"
       @keyup.esc="effacerMessage"
       @keyup.enter="alertMessage"
+      @mouseenter="alertMessage"
       v-model="message"
       >
     <h1>{{ message}}</h1>
