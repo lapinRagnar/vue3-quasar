@@ -15,6 +15,11 @@
       return {
         message: 'Bonjour tout le monde!'
       }
+    },
+    functions: {
+      effacerMessage(){
+        this.message = ''
+      }
     }
   }
 
