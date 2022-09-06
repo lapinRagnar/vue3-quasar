@@ -19,7 +19,7 @@
     <hr>
 
     <p>uppercase message : {{ messageUppercase }} </p>
-    <p>lowercase message : {{ message | messageLowercase }} </p>
+    <p>lowercase message : {{ messageLowercase(message) }} </p>
 
   </q-page>
 </template>
@@ -37,6 +37,9 @@ export default {
     messageUppercase(){
       console.log('message uppercase')
       return this.message.toUpperCase()
+    },
+    messageLowercase(value){
+      return value.toLowerCase()
     }
   },
   methods: {
@@ -50,11 +53,6 @@ export default {
       console.log(e);
       alert("Bonjour");
     },
-  },
-  filters: {
-    messageLowercase(value){
-      return value.toLowerCase()
-    }
   }
 };
 </script>
