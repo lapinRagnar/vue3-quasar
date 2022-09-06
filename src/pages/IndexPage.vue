@@ -18,7 +18,8 @@
 
     <hr>
 
-    <p>uppercase message {{ messageUppercase }} </p>
+    <p>uppercase message : {{ messageUppercase }} </p>
+    <p>lowercase message : {{ message | messageLowercase }} </p>
 
   </q-page>
 </template>
@@ -50,6 +51,11 @@ export default {
       alert("Bonjour");
     },
   },
+  filters: {
+    messageLowercase(value){
+      return value.toLowerCase()
+    }
+  }
 };
 </script>
 
