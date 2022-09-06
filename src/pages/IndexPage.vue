@@ -11,7 +11,7 @@
       v-model="message"
       v-autofocus
 
-      v-bind:class="{'error' : message.length > 22}"
+      :class="{'error' : message.length > 22}"
     />
 
     <div>logueur du message : {{message.length }}</div>
