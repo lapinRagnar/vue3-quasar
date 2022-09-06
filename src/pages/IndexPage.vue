@@ -10,7 +10,11 @@
 
       v-model="message"
       v-autofocus
+
+      v-bind:class="{'error' : message.length > 22}"
     />
+
+    <div>logueur du message : {{message.length }}</div>
 
     <h1 class="border-grey" v-if="message.length" >{{ message }}</h1>
     <h4 v-else>pas de message!</h4>
@@ -66,9 +70,18 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
   .border-grey {
     border: 1px solid grey;
     background-color: aqua;
+  }
+
+  .error {
+    color: red;
+    background: pink;
+  }
+
+  input, button {
+    font-size: 23px;
   }
 </style>
