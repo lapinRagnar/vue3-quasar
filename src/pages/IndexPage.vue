@@ -8,7 +8,8 @@
       v-model="message"
     />
 
-    <h1 class="border-grey" v-show="message.length" >{{ message }}</h1>
+    <h1 class="border-grey" v-if="message.length" >{{ message }}</h1>
+    <h4 v-else>pas de message!</h4>
 
 
     <button @click="message = ''">effacer</button>
