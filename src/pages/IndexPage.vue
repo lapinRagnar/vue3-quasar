@@ -9,6 +9,7 @@
       @keyup.enter="alertMessage"
 
       v-model="message"
+      v-autofocus
     />
 
     <h1 class="border-grey" v-if="message.length" >{{ message }}</h1>
@@ -19,7 +20,7 @@
     <hr>
 
     <p>uppercase message : {{ messageUppercase }} </p>
-    <p>lowercase message : {{ messageLowercase(message) }} </p>
+    <!-- <p>lowercase message : {{ messageLowercase(message) }} </p> -->
 
   </q-page>
 </template>
@@ -53,6 +54,14 @@ export default {
       console.log(e);
       alert("Bonjour");
     },
+  },
+  directives: {
+    autofocus: {
+      inserted(el){
+        console.log('input inserted')
+        el.focus()
+      }
+    }
   }
 };
 </script>
