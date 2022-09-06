@@ -1,6 +1,11 @@
 <template>
   <q-page padding>
-    <input type="text" v-model="message">
+    <input
+      type="text"
+      @keyup.esc="effacerMessage"
+      @keyup.enter="alertMessage"
+      v-model="message"
+      >
     <h1>{{ message}}</h1>
     <button @click="message = ''">effacer</button>
   </q-page>
@@ -19,6 +24,13 @@
     functions: {
       effacerMessage(){
         this.message = ''
+      },
+      handleKeyup(e){
+        console.log(e)
+      },
+      alertMessage(e){
+        console.log(e)
+        alert('Bonjour')
       }
     }
   }
