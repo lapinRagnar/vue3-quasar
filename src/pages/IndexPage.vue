@@ -6,34 +6,41 @@
       @keyup.enter="alertMessage"
       @mouseenter="alertMessage"
       v-model="message"
-      >
-    <h1>{{ message}}</h1>
+    />
+
+    <h1 class="border-grey" v-show="message.length" >{{ message }}</h1>
+
+
     <button @click="message = ''">effacer</button>
   </q-page>
 </template>
 
 <script>
-
-
-  export default{
-    name: 'IndexPage',
-    data (){
-      return {
-        message: 'Bonjour tout le monde!'
-      }
+export default {
+  name: "IndexPage",
+  data() {
+    return {
+      message: "Bonjour tout le monde!",
+    };
+  },
+  functions: {
+    effacerMessage() {
+      this.message = "";
     },
-    functions: {
-      effacerMessage(){
-        this.message = ''
-      },
-      handleKeyup(e){
-        console.log(e)
-      },
-      alertMessage(e){
-        console.log(e)
-        alert('Bonjour')
-      }
-    }
-  }
-
+    handleKeyup(e) {
+      console.log(e);
+    },
+    alertMessage(e) {
+      console.log(e);
+      alert("Bonjour");
+    },
+  },
+};
 </script>
+
+<style>
+  .border-grey {
+    border: 1px solid grey;
+    background-color: aqua;
+  }
+</style>
