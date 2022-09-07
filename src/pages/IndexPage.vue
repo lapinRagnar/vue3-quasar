@@ -12,6 +12,9 @@
       v-autofocus
 
       :style="errorStyle"
+
+      ref="messageInput"
+
     />
 
     <div>logueur du message : {{message.length }}</div>
@@ -79,27 +82,11 @@ export default {
       }
     }
   },
-  beforeCreate() {
-    console.log('beforeCreate')
-  },
-  created() {
-    console.log('created')
-  },
-  beforeMount() {
-    console.log('beforeMount')
-  },
   mounted() {
-    console.log('mounted')
+    console.log(this.$refs)
+    this.$refs.messageInput.className = 'bg-green'
   },
-  beforeUpdate() {
-    console.log('beforeupdate')
-  },
-  updated() {
-    console.log('updated')
-  },
-  unmounted() {
-    console.log('beforeDestroy')
-  },
+
 
 };
 </script>
