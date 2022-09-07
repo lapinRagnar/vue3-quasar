@@ -6,7 +6,7 @@
 
         <div> {{ task.name }} - {{ i }} </div>
         <small>{{ task.dueDate}} @ {{ task.dueTime }}</small>
-        <button>x</button>
+        <button @click="deleteTask(i)">x</button>
 
       </li>
     </ul>
@@ -37,6 +37,11 @@ export default {
           dueTime: '20:45'
         }
       ]
+    }
+  },
+  methods: {
+    deleteTask(index){
+      this.tasks.splice(index, 1)
     }
   }
 
