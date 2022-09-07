@@ -2,7 +2,13 @@
   <q-page padding>
 
     <ul>
-      <li v-for="(task, i) in tasks" :key="i"> {{ task }} </li>
+      <li v-for="(task, i) in tasks" :key="i">
+
+        <div> {{ task.name }} - {{ i }} </div>
+        <small>{{ task.dueDate}} @ {{ task.dueTime }}</small>
+        <button>x</button>
+
+      </li>
     </ul>
 
 
@@ -14,7 +20,23 @@ export default {
   name: "IndexPage",
   data(){
     return {
-      tasks: ['go to shop', 'get bananas', 'get apples']
+      tasks: [
+        {
+          name: 'go to shop',
+          dueDate: '1/1/2022',
+          dueTime: '7:45'
+        },
+        {
+          name: 'get bananas',
+          dueDate: '11/1/2022',
+          dueTime: '8:45'
+        },
+        {
+          name: 'get apples',
+          dueDate: '16/1/2022',
+          dueTime: '20:45'
+        }
+      ]
     }
   }
 
