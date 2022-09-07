@@ -11,7 +11,7 @@
       v-model="message"
       v-autofocus
 
-      :class="{'error' : message.length > 22}"
+      :style="errorStyle"
     />
 
     <div>logueur du message : {{message.length }}</div>
@@ -45,7 +45,19 @@ export default {
     },
     messageLowercase(value){
       return value.toLowerCase()
+    },
+    errorStyle(){
+      if (this.message.length > 22){
+        return {
+          'color': 'red',
+          'background': 'pink'
+        }
+      } else {
+
+        return {}
+      }
     }
+
   },
   methods: {
     effacerMessage() {
