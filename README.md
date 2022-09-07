@@ -39,3 +39,9 @@ quasar build
 
 ### Customize the configuration
 See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js).
+
+### liens utiles
+
+##### material icon :
+https://fonts.google.com/icons?icon.set=Material+Icons&icon.query=list
+
