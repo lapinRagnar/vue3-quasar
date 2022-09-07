@@ -3,13 +3,15 @@
 
     <ul>
 
-        <TaskCompo
+      <TaskCompo
           v-for="(task, i) in tasks"
           :key="i"
           :task="task"
           :i="i"
           :tasks="tasks"
-        />
+      >
+        {{ task.name }}
+      </TaskCompo>
 
     </ul>
 

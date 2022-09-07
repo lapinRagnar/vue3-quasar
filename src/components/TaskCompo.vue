@@ -2,7 +2,7 @@
 
   <li>
 
-    <div> {{ task.name }} - {{ i }} </div>
+    <div> <slot></slot> - {{ i }} </div>
     <small>{{ task.dueDate}} @ {{ task.dueTime }}</small>
     <button @click="deleteTask(i)">x</button>
 
