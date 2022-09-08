@@ -1,6 +1,6 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+  <q-layout view="hHh lpR fFf">
+    <q-header elevated class="bg-blue-grey-13">
       <q-toolbar>
         <q-btn
           flat
@@ -11,11 +11,10 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title>
+        <q-toolbar-title class="absolute-center">
           Mon super todo app
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
 
@@ -42,6 +41,9 @@
       :breakpoint="767"
       show-if-above
       bordered
+      :width="200"
+      class="bg-deep-orange-4"
+
     >
       <q-list>
         <q-item-label
