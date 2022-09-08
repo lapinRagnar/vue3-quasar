@@ -39,6 +39,7 @@
 
     <q-drawer
       v-model="leftDrawerOpen"
+      :breakpoint="767"
       show-if-above
       bordered
     >
@@ -131,10 +132,21 @@ export default defineComponent({
     return {
       essentialLinks: linksList,
       leftDrawerOpen,
+
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value
       }
     }
-  }
+  },
+
 })
 </script>
+
+<style scoped>
+  @media screen and (min-width: 786px){
+    .q-footer {
+      display: none;
+      color: red;
+    }
+  }
+</style>
